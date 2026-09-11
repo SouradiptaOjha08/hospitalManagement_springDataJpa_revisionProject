@@ -15,6 +15,8 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
 
     List<Patient> findByBirthDate(LocalDate birthDate);
 
+    List<Patient> findByBirthDate(String age);
+
     @Query("SELECT p FROM Patient p WHERE p.bloodGroup = :bloodGroup")
     List<Patient> findByBloodGroup(String bloodGroup);
 }
